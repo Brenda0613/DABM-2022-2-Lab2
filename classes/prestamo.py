@@ -24,12 +24,13 @@ def crearPrestamo ():
     p = Prestamo (nombre, carnet, equipo, fechap, fechae)
     return p 
 
-def verPrestamos (carnet):
+def verPrestamos (carnet,equipo):
     for p in Prestamo:
         if carnet in p:
-            
+            print ("Usted realizó un préstamo del siguiente equipo",equipo)
     
 
 
+    
 
 

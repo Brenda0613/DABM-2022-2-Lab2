@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import listaEquipos 
 from tabulate import tabulate 
 class Equipo:
     #variable de clase:algo interno a la aplicacion, utiles para ciertos parametros,datos que no le interesan al usuario pero necesarias para el funcionamiento "file= 'database/equipos.csv'
@@ -34,12 +35,14 @@ def crearEquipo ():
     fum = input ("Fecha de último mantenimiento")
     e = Equipo(nombre,proveedor,cantidad,referencia,ciclo,fum)
     
-    return e 
+    return e, cantidad 
 
-def consultarEquipo ():
+def consultarEquipo (e,cantidad):
     print ("Consulta de equipos")
     nombre = input ("Nombre de equipo:")
-
+    if nombre in e:
+        print ("Cantidad de equipos disponibles:", cantidad)
+        
 #creacion, lectura, prestamo y eliminación de los equipos
     
 def mantenimiento (e):
@@ -71,4 +74,17 @@ def getAllEquipos():
     return datos 
 
 def registroEntrega ():
-    pass 
+    equipo = input("Equipo que desea devolver:")
+    referencia = input ("Número de referencia:")
+    fecha_pres = input ("Fecha en la que se realizó el préstamo(yyyy-mm-dd):")
+    fecha_ent = input ("Fecha de devolución (yyyy-mm-dd):")
+    encabezado = ["Nombre","Referencia", "Fecha del préstamo", "Fecha de devolución"]
+
+    entregas = []
+    for i in entregas:
+        for j in entregas: 
+            entregas [i][j]= [equipo,referencia,fecha_pres,fecha_ent]
+    
+        
+    print (tabulate(entregas,encabezado,tablefmt = "grid"))
+
